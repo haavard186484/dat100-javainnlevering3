@@ -61,8 +61,6 @@ public abstract class Innlegg {
 
 	public void doLike() {
 
-		// Implementer metoden void doLike() som øker antall likes for innlegget med 1.
-
 		System.out.println(likes++);
 	}
 
