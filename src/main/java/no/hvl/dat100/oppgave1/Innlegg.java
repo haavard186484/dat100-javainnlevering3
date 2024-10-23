@@ -2,7 +2,6 @@ package no.hvl.dat100.oppgave1;
 
 import no.hvl.dat100.common.TODO;
 
-
 public abstract class Innlegg {
 
 	private int id;
@@ -18,9 +17,9 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
-		likes = 0; //det står i oppgaven at man skal ha denne med. Antar at man ikke skal sette "this" foran
-		
-		
+		likes = 0; // det står i oppgaven at man skal ha denne med. Antar at man ikke skal sette
+					// "this" foran
+
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
@@ -61,21 +60,25 @@ public abstract class Innlegg {
 	}
 
 	public void doLike() {
-		
-		//Implementer metoden void doLike() som øker antall likes for innlegget med 1.
-		
+
+		// Implementer metoden void doLike() som øker antall likes for innlegget med 1.
+
 		System.out.println(likes++);
 	}
 
-	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
 
+	public boolean erLik(Innlegg innlegg) {  
+		boolean lik = false;
+		
+		if(getId() == innlegg.getId()) {
+			return lik = true;
+		} else return lik;
 	}
 
 	@Override
 	public String toString() {
 
-		String str = id+"\n" + bruker+"\n" + dato+"\n" + likes+"\n";
+		String str = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
 		return str;
 
 	}
