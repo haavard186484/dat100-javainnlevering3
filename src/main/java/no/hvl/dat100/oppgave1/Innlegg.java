@@ -17,9 +17,7 @@ public abstract class Innlegg {
 		this.id = id;
 		this.bruker = bruker;
 		this.dato = dato;
-		likes = 0; // det står i oppgaven at man skal ha denne med. Antar at man ikke skal sette
-					// "this" foran
-
+		likes = 0; 
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {

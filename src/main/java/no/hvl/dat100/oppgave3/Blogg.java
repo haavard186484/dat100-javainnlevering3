@@ -7,7 +7,7 @@ import no.hvl.dat100.oppgave1.Innlegg;
 public class Blogg {
 
 	private Innlegg[] innleggtabell;
-	private int nesteledig;
+	private int nesteLedige;
 
 	public Blogg() {
 
@@ -19,7 +19,7 @@ public class Blogg {
 	}
 
 	public int getAntall() {
-		return nesteledig - 1;
+		return nesteLedige - 1;
 	}
 
 	public Innlegg[] getSamling() {
@@ -31,7 +31,7 @@ public class Blogg {
 		boolean funnet = false;
 		int pos = 0;
 
-		while (pos < nesteledig && !funnet) {
+		while (pos < nesteLedige && !funnet) {
 			if (innleggtabell[pos] == innlegg) {
 				funnet = true;
 			} else
@@ -48,7 +48,7 @@ public class Blogg {
 		boolean funnet = false;
 		int pos = 0;
 
-		while (pos < nesteledig && !funnet) {
+		while (pos < nesteLedige && !funnet) {
 			if (innleggtabell[pos] == innlegg) {
 				funnet = true;
 			} else
@@ -62,13 +62,14 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		if (nesteledig < innleggtabell.length) {
-			return true;
-		} else {
-			return false;
-		}
-
+		
+	return nesteLedige < innleggtabell.length;
 	}
+//		boolean ledig = false;
+//		 if(nesteLedige < innleggtabell.length) {
+//			ledig = true;
+//		} 
+//	return ledig;}
 
 	public boolean leggTil(Innlegg innlegg) {
 
