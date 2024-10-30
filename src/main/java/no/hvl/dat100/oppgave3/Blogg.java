@@ -81,7 +81,11 @@ public class Blogg {
 
 	public String toString() {
 
-		String str = getAntall() + toString();
+		String str = getAntall() + super.toString();
+		
+		return str;
+		
+		
 		/*
 		 * Implementer en metode public String toString() som returnerer data i tabellen
 		 * som en streng der første linje i strengen angir antall Innlegg-objekt i
@@ -92,7 +96,6 @@ public class Blogg {
 		 * Olsen\n24-10\n0\net bilde\nhttp://www.picture.com/oo.jpg\n
 		 * 
 		 */
-		return str;
 	}
 
 	// valgfrie oppgaver nedenfor
