@@ -12,14 +12,16 @@ public class Blogg {
 	public Blogg() {
 
 		innleggtabell = new Innlegg[20];
+		nesteLedige = 0;
 	}
 
 	public Blogg(int lengde) {
 		innleggtabell = new Innlegg[lengde];
+		nesteLedige = 0;
 	}
 
 	public int getAntall() {
-		return nesteLedige - 1;
+		return nesteLedige;
 	}
 
 	public Innlegg[] getSamling() {
@@ -62,48 +64,24 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		
-	return nesteLedige < innleggtabell.length;
+
+		return nesteLedige < innleggtabell.length;
 	}
-//		boolean ledig = false;
-//		 if(nesteLedige < innleggtabell.length) {
-//			ledig = true;
-//		} 
-//	return ledig;}
+
 
 	public boolean leggTil(Innlegg innlegg) {
-
-		/*
-		 * Implementer en metode public boolean leggTil(Innlegg innlegg) som legger
-		 * innlegg inn i tabellen. Dersom der ikke finnes et innlegg i tabellen med
-		 * samme id som innlegg skal metoden legge til innlegget på neste ledige plass i
-		 * tabellen. Ellers skal ikke metoden legge inn innlegg i tabellen. Metoden skal
-		 * returnere true om innlegget blev lagt til og false ellers.
-		 * 
-		 */
-		
-		
+		if (!finnes(innlegg) && ledigPlass()) {
+			innleggtabell[nesteLedige++] = innlegg;
+			return true;
+		} else {
+			return false;
+		}
 
 	}
-//		Boolean lagtTil = false;
-//		int pos = 0;
-//
-//		while (pos < nesteledig && !lagtTil) {
-//			if (innleggtabell[pos].getId() == innlegg.getId()) {
-//				pos++;
-//			} else {
-//				if (pos == nesteledig && !lagtTil) {
-//					innleggtabell[pos] = innlegg;
-//					return lagtTil = true;
-//
-//				}
-//
-//			}
-//
-//		}
 
 	public String toString() {
 
+		String str = getAntall() + toString();
 		/*
 		 * Implementer en metode public String toString() som returnerer data i tabellen
 		 * som en streng der første linje i strengen angir antall Innlegg-objekt i
@@ -114,7 +92,7 @@ public class Blogg {
 		 * Olsen\n24-10\n0\net bilde\nhttp://www.picture.com/oo.jpg\n
 		 * 
 		 */
-		throw new UnsupportedOperationException(TODO.method());
+		return str;
 	}
 
 	// valgfrie oppgaver nedenfor
